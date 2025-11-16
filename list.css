@@ -1,0 +1,271 @@
+/* Global styles */
+body {
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header style */
+.header {
+    background-color: rosybrown;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.login-button {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Links to switch views */
+.view-links {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.view-link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-link:hover {
+    background-color: #a52a2a;
+    color: #fff;
+}
+
+/* Hotel Item Section */
+#hotel-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for hotel images */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hotel-item {
+    display: flex;
+    padding: 10px;
+    background-color: #d6c7c7cf;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(184, 175, 175, 0.973);
+    gap: 10px;
+}
+
+.hotel-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.hotel-item .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hotel-item .details a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Initially hide both sections */
+#hotel-list, #map-view {
+    display: none;
+}
+
+/* Display active sections */
+#hotel-list.active {
+    display: grid;
+}
+
+#map-view.active {
+    display: block;
+}
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star-rating i {
+    color: gold;
+}
+
+/* Map Section */
+.map-section {
+    display: none;
+    text-align: center;
+}
+
+.map-section img {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+}
+
+/* Footer style */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: rosybrown;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    font-size: 14px;
+}
+
+.contact-button a {
+    background-color: skyblue;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.contact-button a:hover {
+    opacity: 0.9;
+}
+
+.social-media-container {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+/* Initially hide the map section */
+.map-section {
+    display: none; /* Initially hidden */
+    height: 400px; /* Or whatever height you want */
+    width: 100%;
+}
+#map-view.active {
+    display: block;
+}
+/* Responsive for screens less than 574px */
+@media (max-width: 576px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .main-section {
+        height: 300px;
+    }
+
+    .search-bar {
+        width: 90%;
+    }
+
+    .image-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .city-image {
+        height: 80px;
+    }
+
+    .view-more-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media-container {
+        justify-content: center;
+    }
+
+    .view-more-button, .view-less-button {
+        width: 80%;
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .image-container,
+    .second-row.active {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+    .main-image {
+        height: 250px;
+    }
+
+    .search-bar {
+        width: 90%;
+    }
+
+    .image-container,
+    .second-row.active {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* Extra Small Mobiles */
+@media (max-width: 400px) {
+    .image-container,
+    .second-row.active {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .search-bar {
+        max-width: 280px;
+    }
+}
+    
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Details</title>
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img class="logo" src="assests\images\logo.png" alt="logo">
+        <a href="login.html" class="login-button">Login</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Box Container with Black Border -->
+        <div class="hotel-box-container">
+            <div class="hotel-image-section">
+                <!-- Image Slider -->
+                <div class="hotel-image-slider">
+                    <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <div class="slider-images">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg" alt="Radisson Blu Hotel 1" class="hotel-image" />
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-o/01/fa/51/70/r-the-spa.jpg" alt="Radisson Blu Hotel 2" class="hotel-image" />
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-w/0e/b2/64/3f/radisson-blu-plaza-delhi.jpg" alt="Radisson Blu Hotel 3" class="hotel-image" />
+                    </div>
+                    <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+            </div>
+            <div class="customer-details">
+                <div class="search-bar">
+                    <label for="Adult">Adult:</label>
+                    <input type="number" id="Adult" placeholder="Enter Number of Adults" min="1">
+
+                    <label for="from-date">From Date:</label>
+                    <input type="date" id="from-date">
+
+                    <label for="to-date">To Date:</label>
+                    <input type="date" id="to-date">
+
+                    <label for="total">Total:</label>
+                    <input type="text" id="total" placeholder="Enter Total" readonly>
+
+
+
+                    <button onclick="location.href='payment.html'" type="submit">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotel Details Section -->
+        <div class="hotel-details">
+            <h2>Radisson Blu Hotel</h2>
+            <p><strong>Rating:</strong> 5 Star</p>
+            <h3>Amenities</h3>
+            <ul>
+                <li>Room Service</li>
+                <li>Restaurant</li>
+                <li>Business Center</li>
+                <li>Fitness Center</li>
+                <li>Pool</li>
+            </ul>
+            <h4>Description</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ab beatae nam cum repellendus molestiae suscipit, incidunt praesentium libero perferendis, aut enim ex hic dignissimos delectus, ea quia aliquam officiis?</p>
+        </div>
+    </main><br>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="contact-button">
+            <a href="contact.html" class="Contact-button">Contact us</a>
+        </div>
+        <div class="notation">&copy;2020 ROOMS SEARCH PVT.LTD</div>
+        <div class="social-media-container">
+            <a href="https://www.facebook.com" target="_blank">
+                <img class="social-media" src="facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img class="social-media" src="instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img class="social-media" src="twitter.png" alt="Twitter">
+            </a>
+        </div>
+    </div>  
+
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="detail.js"></script>
+</body>
+</html>

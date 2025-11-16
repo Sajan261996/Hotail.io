@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <p>Thank you for reaching out!!!</p>
+    <p>Please enter your email, and we will get back to you.</p>
+    <input type="text" id="email" name="email" placeholder="Enter your email" required>
+    <span class="error" id="emailError"></span><br>
+    <button type="button" onclick="redirectToIndex()">Submit</button>
+
+    <script>
+        function redirectToIndex() {
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const email = emailInput.value.trim();
+
+            // Reset error message
+            emailError.textContent = '';
+
+            // Validate email
+            if (email === '') {
+                emailError.textContent = 'Email is required.';
+                return; // Stop further execution
+            }
+
+            // Redirect to index.html with email as a query parameter
+            const queryString = `?email=${encodeURIComponent(email)}`;
+            window.location.href = `index.html${queryString}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Listing</title>
+    <link rel="stylesheet" href="list.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_ACTUAL_API_KEY&libraries=places&callback=initMap" async defer></script>
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map-view"), {
+                center: { lat: 28.6139, lng: 77.2090 }, // Default center: Delhi
+                zoom: 10
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="logo.png" alt="logo">
+        <a href="Index.html" class="login-button">Login</a>
+    </div>
+
+    <div class="view-links">
+        <span class="view-link active" id="list-view-link">List View</span>
+        <span class="view-link" id="map-view-link">Map View</span>
+    </div>
+
+    <div id="hotel-list" class="active">
+        <div class="hotel-item">
+            <a href="detail.html">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg" alt="Poolside">
+            </a>
+            <div class="details">
+                <a href="detail.html">Radisson Blu Hotel</a>
+                <div class="star-rating">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <a href="detail.html">New Delhi</a>
+            </div>
+        </div>
+        </div>
+
+    <div class="map-section" id="map-view"></div>
+
+    <div class="footer">
+        <div class="contact-button">
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="notation">&copy;2020 ROOMS SEARCH PVT.LTD</div>
+        <div class="social-media-container">
+            </div>
+    </div>
+
+    <script>
+        document.getElementById('list-view-link').addEventListener('click', () => {
+            document.getElementById('hotel-list').classList.add('active');
+            document.getElementById('map-view').style.display = 'none'; // Hide map
+            document.getElementById('list-view-link').classList.add('active');
+            document.getElementById('map-view-link').classList.remove('active');
+
+        });
+
+        document.getElementById('map-view-link').addEventListener('click', () => {
+            document.getElementById('map-view').style.display = 'block'; // Show map
+            document.getElementById('hotel-list').classList.remove('active');
+            document.getElementById('map-view-link').classList.add('active');
+            document.getElementById('list-view-link').classList.remove('active');
+
+        });
+    </script>
+</body>
+</html>

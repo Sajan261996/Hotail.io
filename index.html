@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms Search</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img class="logo" src="logo.png" alt="logo">
+        <a href="login.html" class="login-button">Login</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="main-section">
+        <img class="main-image" src="https://media-cdn.tripadvisor.com/media/photo-o/14/10/2e/af/india.jpg" alt="India">
+        <div class="overlay">
+            <input type="text" id="cityInput" class="search-bar" placeholder="Search City..." />
+        </div>
+    </div>
+
+    <!-- City Images Section -->
+    <div class="image-container">
+        <a href="list.html" target="_blank"><img class="city-image" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fe/a2/new-delhi.jpg" alt="Delhi"></a>
+        <a href="list.html" target="_blank"><img class="city-image" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fc/f0/goa.jpg" alt="Goa"></a>
+        <a href="list.html" target="_blank"><img class="city-image" src="https://media-cdn.tripadvisor.com/media/photo-s/0f/98/f7/df/charminar.jpg" alt="Hyderabad"></a>
+        <a href="list.html" target="_blank"><img class="city-image" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fe/ac/kolkata-calcutta.jpg" alt="Kolkata"></a>
+    </div>
+
+    <!-- More Cities -->
+    <div class="image-container second-row" id="extra-cities">
+        <a href="list.html" target="_blank"><img class="city-image" src="https://media-cdn.tripadvisor.com/media/photo-s/15/4d/46/b8/chennai-madras.jpg" alt="Chennai"></a>
+        <a href="list.html" target="_blank"><img class="city-image" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fc/fc/agra.jpg" alt="Agra"></a>
+        <a href="list.html" target="_blank"><img class="city-image" src="https://media-cdn.tripadvisor.com/media/photo-s/10/a3/3b/8a/screenshot-2017-09-12.jpg" alt="Jaipur"></a>
+        <a href="list.html" target="_blank"><img class="city-image" src="https://media-cdn.tripadvisor.com/media/photo-s/0c/d2/2f/7a/palace-from-the-outside.jpg" alt="Bengaluru"></a>
+    </div>
+
+    <!-- Buttons -->
+    <div class="view-more-container">
+        <button class="view-more-button" id="view-more-btn">View more >></button>
+        <button class="view-less-button" id="view-less-btn" style="display: none;">View less <<</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="notation">&copy; 2024 ROOMS SEARCH PVT. LTD</div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        const viewMoreBtn = document.getElementById("view-more-btn");
+        const viewLessBtn = document.getElementById("view-less-btn");
+        const extraCities = document.getElementById("extra-cities");
+
+        viewMoreBtn.addEventListener("click", () => {
+            extraCities.classList.add("active");
+            viewMoreBtn.style.display = "none";
+            viewLessBtn.style.display = "block";
+        });
+
+        viewLessBtn.addEventListener("click", () => {
+            extraCities.classList.remove("active");
+            viewLessBtn.style.display = "none";
+            viewMoreBtn.style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
